@@ -1,10 +1,10 @@
 <script setup lang="ts">
-    const model = defineModel<string>('text')
+    const model = defineModel()
 </script>
 
 <template>
     <textarea v-model="model" class="input-box-border"
-          placeholder="メモを入力してください&#10;(Enterで保存、Shift+Enterで改行)">
+              placeholder="メモを入力してください&#10;(Enterで保存、Shift+Enterで改行)">
     </textarea>
 </template>
 

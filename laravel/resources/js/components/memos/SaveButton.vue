@@ -1,20 +1,20 @@
 <script setup lang="ts">
-defineProps<{
-    disabled: boolean
-}>()
+const props = defineProps({
+    isButtonDisabled: Boolean
+})
+
 </script>
 
 <template>
-    <button :disabled="disabled"
+    <button :disabled="isButtonDisabled"
             class="save-button"
-            :class="{'disabled-button': disabled}">
+            :class="{'disabled-button': isButtonDisabled, 'enabled-button': !isButtonDisabled}">
         ＋　メモを保存
     </button>
 </template>
 
 <style scoped>
 .save-button{
-    background-color: chocolate;
     color: white;
     border: none;
     border-radius: 10px;
@@ -22,8 +22,10 @@ defineProps<{
     font-weight: bold;
     width: 90%;
 }
-
-.save-button.disabled-button{
+.enabled-button{
+    background-color: chocolate;
+}
+.disabled-button{
     background-color: gray;
     opacity: 0.5;
     cursor: not-allowed;

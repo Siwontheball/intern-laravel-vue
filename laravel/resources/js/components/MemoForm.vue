@@ -1,18 +1,22 @@
 <script setup lang="ts">
-import PlusSvg from "./svgs/PlusSvg.vue"
-import Title from "./memos/Title.vue"
-import TextareaForm from "./memos/TextareaForm.vue"
-import SaveButton from "./memos/SaveButton.vue"
-import {ref} from "vue";
+import Title from './memos/Title.vue';
+import SaveButton from './memos/SaveButton.vue';
+import TextareaForm from './memos/TextareaForm.vue';
+import { ref, computed } from "vue";
 
-const text = ref('')
+const text = ref('');
+const isDisabled = computed(() => {
+    return text.value.length === 0;
+});
+
+
 </script>
 
 <template>
     <div class = "card">
         <Title />
-        <TextareaForm v-model="text" />
-        <SaveButton :disabled="text.length == 0" />
+        <TextareaForm v-model="text"/>
+        <SaveButton :isButtonDisabled="isDisabled" />
     </div>
 </template>
 
@@ -29,5 +33,4 @@ const text = ref('')
     align-items: center;
     gap: 30px;
 }
-
 </style>
