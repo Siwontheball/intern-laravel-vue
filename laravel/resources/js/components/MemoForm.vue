@@ -3,6 +3,7 @@ import Title from './memos/Title.vue';
 import SaveButton from './memos/SaveButton.vue';
 import TextareaForm from './memos/TextareaForm.vue';
 import { ref, computed } from "vue";
+import axios from 'axios';
 
 const text = ref('');
 const isDisabled = computed(() => {
@@ -10,13 +11,26 @@ const isDisabled = computed(() => {
 });
 
 
+const postMemo = async () => {
+    await axios({
+        method: 'post',
+        url: '/api/memo',
+        data: { content: text.value }
+    });
+    text.value = '';
+    alert('保存完了');
+
+};
+
 </script>
 
 <template>
     <div class = "card">
         <Title />
-        <TextareaForm v-model="text"/>
-        <SaveButton :isButtonDisabled="isDisabled" />
+        <form v-on:submit.prevent="postMemo" v-on:keyup.enter="postMemo" method="post">
+            <TextareaForm v-model="text" name="content"/>
+            <SaveButton :isButtonDisabled="isDisabled" />
+        </form>
     </div>
 </template>
 
