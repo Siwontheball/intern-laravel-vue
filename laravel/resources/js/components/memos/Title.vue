@@ -6,22 +6,23 @@ import PlusSvg from "@/components/svgs/PlusSvg.vue";
 <template>
     <div class="card-title">
         <PlusSvg class="card-title-icon" />
-        <h3>新しいメモ</h3>
+        <h3 class="card-title-text">新しいメモ</h3>
     </div>
 </template>
 
 
 <style scoped>
 .card-title{
-    margin-left: 5%;
-    margin-top: 5%;
     display: flex;
     gap: 12px;
-    font-size: 20px;
-    align-self: flex-start;
+    margin-top: 3%;
+    margin-left: 5%;
 }
 .card-title-icon{
     width: 28px;
     height: 28px;
+}
+.card-title-text{
+    font-size: 20px;
 }
 </style>

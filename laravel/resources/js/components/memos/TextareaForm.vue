@@ -18,8 +18,10 @@
     height: 200px;
     padding: 15px;
     outline: none;
+    margin-top: 3%;
 }
 .input-box-border:focus {
-    border-color: darkcyan;
+    border-color: #008cff;
+    opacity: 70%;
 }
 </style>

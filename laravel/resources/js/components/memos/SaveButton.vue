@@ -21,12 +21,14 @@ const props = defineProps({
     padding: 12px;
     font-weight: bold;
     width: 90%;
+    margin-top: 3%;
 }
 .enabled-button{
-    background-color: chocolate;
+    background: orangered;
+    opacity: 80%;
 }
 .disabled-button{
-    background-color: gray;
+    background: linear-gradient(to right, orange, red);
     opacity: 0.5;
     cursor: not-allowed;
 }
