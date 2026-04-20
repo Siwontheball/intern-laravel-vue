@@ -9,8 +9,19 @@ class MemoController extends Controller
 {
     //
     public function store(Request $request){
-        Memo::create([
+        $memo = Memo::create([
             'memo' => $request['content'],
         ]);
+        return response()->json($memo);
+    }
+
+    public function index(){
+        $memos = Memo::all();
+        return response()->json($memos);
+    }
+
+    public function destroy($id){
+        $memo = Memo::find($id);
+        $memo->delete();
     }
 }

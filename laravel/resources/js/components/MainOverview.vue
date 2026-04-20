@@ -2,25 +2,33 @@
 import ListTitle from "@/components/ListTitle.vue";
 import MemoForm from "@/components/MemoForm.vue";
 import tempCardList from "@/components/tempCardsList.vue"
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted } from 'vue';
+import axios from 'axios';
 let id = 0
+interface Memo {
+    id:number;
+    memo:string;
+    created_at: string;
+};
 
 const newMemo = ref("");
-const memoList = ref([
-    { id: id++, text: 'Vue.jsの基本構文を復習する', date: "2024-07-30 10:30" },
-    { id: id++, text: 'Laravelのルーティングについて調べる', date: "2024-07-30 09:15" },
-    { id: id++, text: '明日のプレゼン資料を準備する', date: "2024-07-29 16:45" },
-]);
-const handleAddMemo = (newText: string) => {
-    memoList.value.push(
-        {id: id ++, text:newText}
-    );
+const memoList = ref<Memo[]>([]);
+const handleAddMemo = (savedObject: Memo) => {
+    memoList.value.push(savedObject);
+};
+const fetchMemos = async() =>{
+    const response = await axios.get('/api/memo');
+    memoList.value = response.data;
 };
 const totalMemo = computed(()=> memoList.value.length);
 
-const handleRemove = (targetId: number) => {
+const handleRemove = async (targetId: number) => {
+    await axios.delete(`/api/memo/${targetId}`);
     memoList.value = memoList.value.filter(memo => memo.id !== targetId);
 };
+onMounted(() => {
+    fetchMemos();
+});
 </script>
 
 <template>
