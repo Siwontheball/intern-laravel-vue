@@ -11,13 +11,13 @@ const isDisabled = computed(() => {
 });
 const emit = defineEmits(['seeNewMemo'])
 const postMemo = async () => {
-    await axios({
+    const response = await axios({
         method: 'post',
         url: '/api/memo',
         data: { content: text.value }
     });
     alert('保存完了');
-    emit('seeNewMemo', text.value);
+    emit('seeNewMemo', response.data);
     text.value = '';
 };
 

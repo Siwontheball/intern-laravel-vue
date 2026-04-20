@@ -14,10 +14,10 @@ function requestRemove(id: number){
 <template>
     <ul>
         <li v-for="memo in memos" :key="memo.id" class="list-card">
-            {{ memo.text }}
+            {{ memo.memo }}
             <button @click="requestRemove(memo.id)" class="trash-box"><TrashSvg /></button>
             <br>
-            <p>{{ memo.date }}</p>
+            <p>{{ memo.created_at }}</p>
         </li>
     </ul>
 </template>
