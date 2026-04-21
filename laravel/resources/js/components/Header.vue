@@ -23,7 +23,7 @@ const icon = ref(DocumentSvg)
 }
 
 .first{
-    color: chocolate;
+    color: #f35434;
     font-size: 32px;
     justify-content: center;
     display: flex;

@@ -27,7 +27,7 @@ const postMemo = async () => {
     <div class = "card">
         <Title />
         <form v-on:submit.prevent="postMemo" class="inside-card">
-            <TextareaForm v-model="text" />
+            <TextareaForm @keydown.enter.prevent="postMemo" v-model="text" />
             <SaveButton :isButtonDisabled="isDisabled" />
         </form>
     </div>
@@ -38,7 +38,7 @@ const postMemo = async () => {
     border-radius: 16px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
     background-color: white;
-    margin-top: 10%;
+    margin-top: 5%;
     height:400px;
     width: 100%;
 }

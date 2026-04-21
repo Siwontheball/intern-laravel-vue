@@ -45,7 +45,6 @@ onMounted(() => {
 .listTitle{
     display: flex;
     justify-content: space-between;
-    align-items: center;
     width: 100%;
     margin-top: 3%;
 }
@@ -53,7 +52,6 @@ onMounted(() => {
     display: flex;
     flex-direction: column;
     width: 70%;
-    align-items: center;
     margin: 0 auto;
 }
 .bottom-text{
@@ -62,6 +60,7 @@ onMounted(() => {
     opacity: 80%;
     margin-top: 3%;
     margin-bottom: 3%;
+    text-align: center;
 }
 .badge{
     background-color: rgba(0, 0, 0, 0.05);
