@@ -4,14 +4,12 @@ import MemoForm from "@/components/MemoForm.vue";
 import tempCardList from "@/components/tempCardsList.vue"
 import { ref, computed, onMounted } from 'vue';
 import axios from 'axios';
-let id = 0
+
 interface Memo {
     id:number;
     memo:string;
     created_at: string;
 };
-
-const newMemo = ref("");
 const memoList = ref<Memo[]>([]);
 const handleAddMemo = (savedObject: Memo) => {
     memoList.value.push(savedObject);
