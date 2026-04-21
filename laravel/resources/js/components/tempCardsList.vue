@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { ref} from 'vue';
 import TrashSvg from '@/components/svgs/TrashSvg.vue';
-
 const props = defineProps({
     memos: Array
 });

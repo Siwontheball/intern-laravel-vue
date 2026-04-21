@@ -26,8 +26,8 @@ const postMemo = async () => {
 <template>
     <div class = "card">
         <Title />
-        <form v-on:submit.prevent="postMemo" v-on:keyup.enter="postMemo" method="post" class="inside-card">
-            <TextareaForm v-model="text" name="content"/>
+        <form v-on:submit.prevent="postMemo" class="inside-card">
+            <TextareaForm v-model="text" />
             <SaveButton :isButtonDisabled="isDisabled" />
         </form>
     </div>
