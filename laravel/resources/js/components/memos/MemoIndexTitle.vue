@@ -4,22 +4,22 @@ import DocumentSvg from "@/components/svgs/DocumentSvg.vue";
 </script>
 
 <template>
-    <div class="list-title-group">
-        <DocumentSvg class="list-title-icon" />
-        <p class="list-title-text">保存されたメモ</p>
+    <div class="index-title-group">
+        <DocumentSvg class="index-title-icon" />
+        <p class="index-title-text">保存されたメモ</p>
     </div>
 </template>
 
 <style scoped>
-.list-title-group{
+.index-title-group{
     display: flex;
     gap: 12px;
 }
-.list-title-icon{
+.index-title-icon{
     width: 28px;
     height: 28px;
 }
-.list-title-text{
+.index-title-text{
     font-size: 20px;
 }
 </style>

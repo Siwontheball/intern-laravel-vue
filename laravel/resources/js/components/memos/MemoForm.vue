@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import Title from './memos/Title.vue';
-import SaveButton from './memos/SaveButton.vue';
-import TextareaForm from './memos/TextareaForm.vue';
+import InputTitle from './parts/InputTitle.vue';
+import SaveButton from './parts/SaveButton.vue';
+import InputTextarea from './parts/InputTextarea.vue';
 import { ref, computed } from "vue";
 import axios from 'axios';
 
@@ -25,9 +25,9 @@ const postMemo = async () => {
 
 <template>
     <div class = "card">
-        <Title />
+        <InputTitle />
         <form v-on:submit.prevent="postMemo" class="inside-card">
-            <TextareaForm @keydown.enter.prevent="postMemo" v-model="text" />
+            <InputTextarea @keydown.enter.prevent="postMemo" v-model="text" />
             <SaveButton :isButtonDisabled="isDisabled" />
         </form>
     </div>

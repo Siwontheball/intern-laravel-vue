@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import ListTitle from "@/components/ListTitle.vue";
-import MemoForm from "@/components/MemoForm.vue";
-import tempCardList from "@/components/tempCardsList.vue"
+import MemoIndexTitle from "@/components/memos/MemoIndexTitle.vue";
+import MemoForm from "@/components/memos/MemoForm.vue";
+import MemoIndex from "@/components/memos/MemoIndex.vue"
 import { ref, computed, onMounted } from 'vue';
 import axios from 'axios';
 
@@ -32,17 +32,17 @@ onMounted(() => {
 <template>
     <div class="overview">
         <MemoForm @seeNewMemo="handleAddMemo" />
-        <div class=listTitle>
-            <ListTitle />
+        <div class=indexTitle>
+            <MemoIndexTitle />
             <p class="badge">{{ totalMemo }}件</p>
         </div>
-        <tempCardList :memos="memoList" @remove="handleRemove"/>
+        <MemoIndex :memos="memoList" @remove="handleRemove"/>
         <p class="bottom-text">💡Enterキーで素早く保存できます</p>
     </div>
 </template>
 
 <style scoped>
-.listTitle{
+.indexTitle{
     display: flex;
     justify-content: space-between;
     width: 100%;
