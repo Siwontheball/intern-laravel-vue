@@ -17,7 +17,7 @@ const formatDate = (date: string) => {
 
 <template>
     <ul>
-        <li v-for="memo in memos" :key="memo.id" class="list-card">
+        <li v-for="memo in memos" :key="memo.id" class="each-card">
             <div class="card-content">
                 {{ memo.memo }}
                 <p class="date-text">{{ formatDate(memo.created_at) }}</p>
@@ -29,7 +29,7 @@ const formatDate = (date: string) => {
 
 <style scoped>
 
-.list-card{
+.each-card{
     background-color: white;
     border-radius: 12px;
     margin-top: 30px;
@@ -51,7 +51,7 @@ const formatDate = (date: string) => {
 .trash-box{
     opacity: 0%;
 }
-.list-card:hover .trash-box{
+.each-card:hover .trash-box{
     opacity: 50%;
 }
 </style>

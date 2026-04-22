@@ -7,11 +7,11 @@ const icon = ref(DocumentSvg)
 
 <template>
     <header class="header-container">
-        <h1 class="first">
+        <h1 class=title>
             <icon class="title-icon" />
             <span><strong>かんたんメモ</strong></span>
         </h1>
-        <p class="sec">思いついたことをサッと記録しよう</p>
+        <p class="sub-title">思いついたことをサッと記録しよう</p>
     </header>
 </template>
 
@@ -22,7 +22,7 @@ const icon = ref(DocumentSvg)
     padding: 30px 0px;
 }
 
-.first{
+.title{
     color: #f35434;
     font-size: 32px;
     justify-content: center;
@@ -35,7 +35,7 @@ const icon = ref(DocumentSvg)
     height: 32px;
 }
 
-.sec{
+.sub-title{
     text-align: center;
     color: black;
     font-size: 15px;
