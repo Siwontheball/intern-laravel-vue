@@ -36,7 +36,6 @@ const formatDate = (date: string) => {
     width: 100%;
     min-height: 80px;
     display: flex;
-    justify-content: space-between;
     padding: 20px 30px;
 }
 .card-content{

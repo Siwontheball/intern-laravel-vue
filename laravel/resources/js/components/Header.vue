@@ -33,6 +33,7 @@ const icon = ref(DocumentSvg)
 .title-icon{
     width: 32px;
     height: 32px;
+    margin-top: 8px;
 }
 
 .sub-title{
