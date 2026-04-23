@@ -14,6 +14,11 @@ const memoList = ref<Memo[]>([]);
 const handleAddMemo = (savedObject: Memo) => {
     memoList.value.push(savedObject);
 };
+const handleSave = async(content: string) => {
+    const response = await axios.post('/api/memo', { content });
+    memoList.value.push(response.data);
+    alert('保存完了');
+};
 const fetchMemos = async() =>{
     const response = await axios.get('/api/memo');
     memoList.value = response.data;
@@ -31,7 +36,7 @@ onMounted(() => {
 
 <template>
     <div class="overview">
-        <MemoForm @seeNewMemo="handleAddMemo" />
+        <MemoForm @saveNewMemo="handleSave" />
         <div class=indexTitle>
             <MemoIndexTitle />
             <p class="badge">{{ totalMemo }}件</p>
