@@ -9,15 +9,9 @@ const text = ref('');
 const isDisabled = computed(() => {
     return text.value.length === 0;
 });
-const emit = defineEmits(['seeNewMemo'])
-const postMemo = async () => {
-    const response = await axios({
-        method: 'post',
-        url: '/api/memo',
-        data: { content: text.value }
-    });
-    alert('保存完了');
-    emit('seeNewMemo', response.data);
+const emit = defineEmits(['saveNewMemo'])
+const requestSave = () => {
+    emit('saveNewMemo', text.value);
     text.value = '';
 };
 
@@ -26,8 +20,8 @@ const postMemo = async () => {
 <template>
     <div class = "card">
         <InputTitle />
-        <form v-on:submit.prevent="postMemo" class="inside-card">
-            <InputTextarea @keydown.enter.prevent="postMemo" v-model="text" />
+        <form v-on:submit.prevent="requestSave" class="inside-card">
+            <InputTextarea @keydown.enter.prevent="requestSave" v-model="text" />
             <SaveButton :isButtonDisabled="isDisabled" />
         </form>
     </div>
