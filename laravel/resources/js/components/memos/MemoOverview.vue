@@ -11,9 +11,7 @@ interface Memo {
     created_at: string;
 };
 const memoList = ref<Memo[]>([]);
-const handleAddMemo = (savedObject: Memo) => {
-    memoList.value.push(savedObject);
-};
+
 const handleSave = async(content: string) => {
     const response = await axios.post('/api/memo', { content });
     memoList.value.push(response.data);
