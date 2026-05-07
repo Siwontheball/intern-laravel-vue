@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import PlusSvg from "@/components/svgs/PlusSvg.vue";
+import PlusSvg from "@/assets/svgs/PlusSvg.vue";
 </script>
 
 <template>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import DocumentSvg from "./svgs/DocumentSvg.vue"
+import DocumentSvg from "@/assets/svgs/DocumentSvg.vue"
 const icon = ref(DocumentSvg)
 
 </script>
