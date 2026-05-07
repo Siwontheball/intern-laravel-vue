@@ -1,20 +1,11 @@
-import axios, { AxiosInstance } from "axios";
+import axiosClient from './axios';
 
 declare global {
   interface Window {
-    axios: AxiosInstance;
+      axios: typeof axiosClient;
   }
 }
 
-window.axios = axios;
+axiosClient.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 
-window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
-
-const api = axios.create({
-  baseURL: import.meta.env.VITE_APP_URL + "/api",
-  headers: {
-    "X-Requested-With": "XMLHttpRequest",
-  },
-});
-
-export default api;
+window.axios = axiosClient;

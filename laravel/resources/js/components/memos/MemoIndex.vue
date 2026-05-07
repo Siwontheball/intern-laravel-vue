@@ -1,8 +1,15 @@
 <script setup lang="ts">
-import TrashSvg from '@/components/svgs/TrashSvg.vue';
+import TrashSvg from '@/assets/svgs/TrashSvg.vue';
 const props = defineProps({
     memos: Array
 });
+// const props = defineProps<{
+// memos: {
+//     id: number;
+//     memo: string;
+//     created_at: string;
+// }[]
+// }>();
 const emit = defineEmits(["remove"]);
 function requestRemove(id: number){
     emit('remove', id);
@@ -37,6 +44,7 @@ const formatDate = (date: string) => {
     min-height: 80px;
     display: flex;
     padding: 20px 30px;
+    justify-content: space-between;
 }
 .card-content{
     display: flex;
